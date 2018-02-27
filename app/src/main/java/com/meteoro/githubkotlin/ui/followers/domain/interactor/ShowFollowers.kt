@@ -4,6 +4,6 @@ import com.meteoro.githubkotlin.ui.followers.data.models.FollowersViewModelHolde
 import rx.Observable
 
 /**
- * Created by meteoro on 26/02/2018.
+ * Created by meteoro on 27/02/2018.
  **/
-interface GetFollowers : Observable.Transformer<String, FollowersViewModelHolder>
+interface ShowFollowers : Observable.Transformer<FollowersViewModelHolder, FollowersViewModelHolder>

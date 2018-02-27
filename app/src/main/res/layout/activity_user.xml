@@ -25,7 +25,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:msv_errorView="@layout/state_user_error"
         app:msv_loadingView="@layout/state_user_loading"
-        app:msv_viewState="content">
+        app:msv_viewState="loading">
 
         <include
             layout="@layout/state_user_content"

@@ -17,13 +17,18 @@ class GetFollowersImpl @Inject constructor(
         private @UiScheduler val uiScheduler: Scheduler,
         private val repository: GithubFollowersRepository) : GetFollowers {
 
-    override fun getFollowers(username: String): Observable<FollowersViewModelHolder> {
+    override fun call(observable: Observable<String>): Observable<FollowersViewModelHolder> {
+        return observable
+                .flatMap(this::getFollowers)
+    }
+
+    private fun getFollowers(username: String): Observable<FollowersViewModelHolder> {
         return repository.getFollowers(username)
+                .observeOn(uiScheduler)
+                .subscribeOn(ioScheduler)
                 .flatMap(this::mapViewModelImage)
                 .toList()
                 .map(this::mapper)
-                .observeOn(uiScheduler)
-                .subscribeOn(ioScheduler)
     }
 
     private fun mapViewModelImage(followers: List<Follower>): Observable<Follower> {

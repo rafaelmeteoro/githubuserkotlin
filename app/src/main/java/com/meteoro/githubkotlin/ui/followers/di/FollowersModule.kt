@@ -4,8 +4,7 @@ import android.arch.lifecycle.LifecycleOwner
 import com.meteoro.githubkotlin.core.di.PerActivity
 import com.meteoro.githubkotlin.core.lifecycle.AutomaticUnsubscriber
 import com.meteoro.githubkotlin.core.lifecycle.LifecycleUnsubscriber
-import com.meteoro.githubkotlin.ui.followers.domain.interactor.GetFollowers
-import com.meteoro.githubkotlin.ui.followers.domain.interactor.GetFollowersImpl
+import com.meteoro.githubkotlin.ui.followers.domain.interactor.*
 import com.meteoro.githubkotlin.ui.followers.presentation.FollowersActivity
 import com.meteoro.githubkotlin.ui.followers.presentation.FollowersContract
 import com.meteoro.githubkotlin.ui.followers.presentation.FollowersPresenter
@@ -44,7 +43,19 @@ class FollowersModule(var activity: FollowersActivity) {
 
     @Provides
     @PerActivity
+    fun showGetFollowersLoading(impl: ShowGetFollowersLoadingImpl): ShowGetFollowersLoading {
+        return impl
+    }
+
+    @Provides
+    @PerActivity
     fun getFollowers(impl: GetFollowersImpl): GetFollowers {
+        return impl
+    }
+
+    @Provides
+    @PerActivity
+    fun showFollowers(impl: ShowFollowersImpl): ShowFollowers {
         return impl
     }
 }

@@ -4,6 +4,6 @@ import com.meteoro.githubkotlin.ui.user.data.models.GithubUser
 import rx.Observable
 
 /**
- * Created by meteoro on 21/02/2018.
+ * Created by meteoro on 27/02/2018.
  **/
-interface GetUser : Observable.Transformer<String, GithubUser>
+interface ShowUser : Observable.Transformer<GithubUser, GithubUser>

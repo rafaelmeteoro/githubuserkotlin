@@ -14,9 +14,15 @@ import javax.inject.Inject
 class GetUserImpl @Inject constructor(
         private @IoScheduler val ioScheduler: Scheduler,
         private @UiScheduler val uiScheduler: Scheduler,
-        private val repository: GithubUserRepository) : GetUser {
+        private val repository: GithubUserRepository
+) : GetUser {
 
-    override fun getUser(username: String): Observable<GithubUser> {
+    override fun call(observable: Observable<String>): Observable<GithubUser> {
+        return observable
+                .flatMap(this::getUser)
+    }
+
+    private fun getUser(username: String): Observable<GithubUser> {
         return repository.getUser(username)
                 .observeOn(uiScheduler)
                 .subscribeOn(ioScheduler)

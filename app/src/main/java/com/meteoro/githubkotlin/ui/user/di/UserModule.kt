@@ -4,8 +4,7 @@ import android.arch.lifecycle.LifecycleOwner
 import com.meteoro.githubkotlin.core.di.PerActivity
 import com.meteoro.githubkotlin.core.lifecycle.AutomaticUnsubscriber
 import com.meteoro.githubkotlin.core.lifecycle.LifecycleUnsubscriber
-import com.meteoro.githubkotlin.ui.user.domain.interactor.GetUser
-import com.meteoro.githubkotlin.ui.user.domain.interactor.GetUserImpl
+import com.meteoro.githubkotlin.ui.user.domain.interactor.*
 import com.meteoro.githubkotlin.ui.user.presentation.UserActivity
 import com.meteoro.githubkotlin.ui.user.presentation.UserContract
 import com.meteoro.githubkotlin.ui.user.presentation.UserPresenter
@@ -44,7 +43,19 @@ class UserModule(var activity: UserActivity) {
 
     @Provides
     @PerActivity
+    fun showGetUserLoading(impl: ShowGetUserLoadingImpl): ShowGetUserLoading {
+        return impl
+    }
+
+    @Provides
+    @PerActivity
     fun getUser(impl: GetUserImpl): GetUser {
+        return impl
+    }
+
+    @Provides
+    @PerActivity
+    fun showUser(impl: ShowUserImpl): ShowUser {
         return impl
     }
 }
