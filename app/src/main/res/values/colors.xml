@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Loading error / Empty status -->
+    <color name="state_error_text">#AFAFAF</color>
+    <color name="state_error_icon">#afafaf</color>
+    <color name="state_empty_icon">#808080</color>
+    <color name="state_loadin_view">#d7d4d4</color>
+
+    <!-- Loading animations -->
+    <color name="loading_icon_star">#D6D6D6</color>
+    <color name="loading_icon_end">#EFEFEF</color>
+</resources>

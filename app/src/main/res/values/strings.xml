@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">githubkotlin</string>
+    <string name="api_host">https://api.github.com</string>
+
+    <!-- View state -->
+    <string name="error_loading_user">Erro ao buscar usuário</string>
+    <string name="error_loading_follower">Erro ao buscar seguidores</string>
+    <string name="error_tap_to_retry">Clique para recarregar</string>
+
+    <string name="user_title">Usuário</string>
+    <string name="followers_title">Seguidores</string>
+
+    <!-- Activity Input Username -->
+    <string name="username_input_text_hint">Digite seu username</string>
+    <string name="username_input_text_button">Confirmar</string>
+
+</resources>
